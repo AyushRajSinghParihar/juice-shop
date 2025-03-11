@@ -47,10 +47,9 @@ $bg-heading: rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-.img-container {
+.box-img-container {
   height: 360px;
   width: 360px;
-  padding-bottom: 30px;
 }
 
 .card-content {
@@ -73,17 +72,17 @@ $bg-heading: rgba(0, 0, 0, 0.2);
 
 .feature-card {
   height: auto;
-  max-height: 120px;
+  max-height: 180px; // Increased from 120px
 }
 
 .feature-card .card-content {
   height: 100%;
   overflow: hidden;
-  padding: 10px;
+  padding: 15px; // Increased padding
 }
 
 .feature-card .img-container {
-  flex: 0 0 40%;
+  flex: 0 0 30%; // Reduced from 40% to give more space to text
   align-items: center;
   display: flex;
   height: auto;
@@ -91,13 +90,13 @@ $bg-heading: rgba(0, 0, 0, 0.2);
   min-height: 60px;
 }
 
-.feature-card .card-text {
-  flex: 0 0 60%;
-}
+// .feature-card .card-text {
+//   flex: 0 0 70%; // Increased from 60%
+//   padding-left: 10px; // Added padding for better text spacing
+// }
 
 .feature-card .item-description {
-  font-size: 0.9em;
-  margin-top: 8px;
+  margin-top: 12px; 
 }
 
 @media screen and (max-width: 768px) {
@@ -123,12 +122,40 @@ $bg-heading: rgba(0, 0, 0, 0.2);
     width: calc(60% - 10px);
   }
   
-  .feature-card .card-content {
-    flex-direction: column;
-  }
+.feature-card {
+  max-height: none; // Remove max-height constraint on mobile
+  min-height: 180px; // Set minimum height for consistency
+}
+
+.feature-card .card-content {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.feature-card .img-container {
+  margin-bottom: 15px;
+}
+
+.feature-card .card-text {
+  flex: 1 1 auto;
+  width: 100%;
+  padding-left: 0;
+}
 }
 
 @media screen and (max-width: 480px) {
+  .box-img-container {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+  }
+
+  .deluxe-membership .card-text {
+    padding: 10px;
+  }
+
   .deluxe-membership .img-container {
     max-width: 120px;
     width: 30%;
